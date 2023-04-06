@@ -9,7 +9,7 @@
 <script>
   function initFreshChat() {
     window.fcWidget.init({
-      	 token: "ed4d253d-1d61-4b09-8900-f1f3960c3b81",
+	 token: "ed4d253d-1d61-4b09-8900-f1f3960c3b81",
 	 host: "https://peacock.freshchat.com",
 	 widgetUuid: "265aa95e-121d-4b93-b3cd-28ace8009254"
     });
@@ -22,7 +22,12 @@
   window.attachEvent("load",initiateCall,!1);
 </script>
 	<script>
-		window.fcWidget.open({ name: "Inbox", replyText: "Thank you for the help."  });
+		window.fcWidget.on("widget:loaded", function(resp) {
+  console.log('Widget Loaded');
+  //Function to do some task
+			window.fcWidget.open({ name: "Inbox", replyText: "Thank you for the help."  });
+});
+
 	</script>
 </body>
 </html>
